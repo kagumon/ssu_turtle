@@ -1,6 +1,30 @@
 #화면 사이즈
-WIDTH = 300
-HEIGHT = 400
+WIDTH = 400
+HEIGHT = 500
+
+#초당 이동 횟수
+CLOCK_TICK = 30
 
 #세대 체인지 시간
-NEXT_GENE_TIME = 7
+NEXT_GENE_TIME = 10
+
+#세대 체인지 시간
+TURTLE_STEP_SIZE = 2
+
+#거북이 사이즈 및 정보
+TURTLE_WIDTH  = 15
+TURTLE_HEIGHT = 17
+TURTLE_X      = WIDTH  / 2 - TURTLE_WIDTH  / 2
+TURTLE_Y      = HEIGHT - 100 - TURTLE_HEIGHT / 2
+
+#장애물 사이즈 및 정보
+JANG_WIDTH  = 250
+JANG_HEIGHT = 10
+JANG_X      = WIDTH  / 2 - JANG_WIDTH  / 2
+JANG_Y      = HEIGHT / 2 - JANG_HEIGHT / 2
+
+#목표물 사이즈 및 정보
+TARGET_WIDTH  = 20
+TARGET_HEIGHT = 20
+TARGET_X      = WIDTH  / 2 - TARGET_WIDTH  / 2
+TARGET_Y      = 100 - TARGET_HEIGHT / 2

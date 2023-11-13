@@ -9,13 +9,14 @@ class Turtle(object):
         self.image         = pygame.transform.scale(pygame.image.load("./turtle.png"), (user_def.TURTLE_WIDTH, user_def.TURTLE_HEIGHT)).convert_alpha()
         self.x             = user_def.TURTLE_X
         self.y             = user_def.TURTLE_Y
-        self.head          = random.randint(0, 361)
+        self.head          = 0
         self.rotated_image = pygame.transform.rotate(self.image, self.head)
         self.rotate_speed  = random.randint(1, 3)
-        self.gene          = np.random.randint(-30, 30, size=user_def.CLOCK_TICK * user_def.NEXT_GENE_TIME)
+        self.gene          = np.random.randint(-30, 30, size=user_def.CLOCK_TICK * user_def.NEXT_GENE_TIME) if randyn else gene
 
     def rotate(self, idx):
-        self.head += self.gene[idx]
+        if(idx < user_def.CLOCK_TICK * user_def.NEXT_GENE_TIME) : 
+            self.head += self.gene[idx]
         self.rotated_image = pygame.transform.rotate(self.image, self.head)
 
     def forword(self):
@@ -37,3 +38,15 @@ class Turtle(object):
             return True
         else :
             return False
+    
+    def distance(self) :
+        x1 = self.x
+        x2 = user_def.TARGET_X
+        
+        y1 = self.y
+        y2 = user_def.TARGET_Y
+ 
+        a = int(self.x - user_def.TARGET_X)
+        b = int(self.y - user_def.TARGET_Y)
+ 
+        return math.sqrt((a * a) + (b * b))
